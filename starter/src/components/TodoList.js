@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import TodoItem from './TodoItem';
 import {useSelector, useDispatch} from 'react-redux'
 import { getAsync } from '../redux/todoSlice';
@@ -15,7 +15,7 @@ useEffect(
 	return (
 		<ul className='list-group'>
 			{todos.map((todo) => (
-				<TodoItem id={todo.id} title={todo.title} favorited={todo.favorited} key={Math.random()}/>
+				<TodoItem id={todo.id} title={todo.title} favorited={todo.favorited} key={Math.random()+1}/>
 			))}
 		</ul>
 	);
